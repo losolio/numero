@@ -15,6 +15,7 @@ openpyxl = "~=3.0.7"
 [dev-packages]
 flake8 = "*"
 isort = "*"
+autopep8 = "*"
 
 [requires]
 python_version = "3.8"
