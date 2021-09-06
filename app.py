@@ -5,9 +5,10 @@ import pandas as pd
 
 
 data = pd.read_excel("data/Helsenorge-statistikk.xlsx", "Helsenorge")
-print(data[:6])
 
-app = dash.Dash()
+app = dash.Dash(__name__)
+server = app.server
+
 colors = {
     'background': '#eeeeee',
     'background-graph': '#dddde6',
