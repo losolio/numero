@@ -45,12 +45,18 @@ app.layout = html.Div(
         ),
         html.P(children='Hvor mange er innom?'),
         dcc.Graph(
-            id='Graph1',
+            id='visits',
             figure={
                 "data": [{
-                    'x': data['Month'],
-                    'y': data['Visits']
-                }],
+                        'name': 'Besøk',
+                        'x': data['Month'],
+                        'y': data['Visits']
+                    },
+                    {
+                        'name': 'Besøk med innlogging',
+                        'x': data['Month'],
+                        'y': data['Besøk med innlogging']
+                    }],
                 'layout': {
                     'title': "Besøkende",
                     'plot_bgcolor': colors['background-graph'],
@@ -59,7 +65,27 @@ app.layout = html.Div(
                         'color': colors['text']
                     }
                 }
-            }
+            },
+            className='my-2'
+        ),
+        dcc.Graph(
+            id='visitors',
+            figure={
+                "data": [{
+                        'name': 'Unike besøkende',
+                        'x': data['Month'],
+                        'y': data['Unique Visitors']
+                    }],
+                'layout': {
+                    'title': "Unike besøkende",
+                    'plot_bgcolor': colors['background-graph'],
+                    'paper_bgcolor': colors['light'],
+                    'font': {
+                        'color': colors['text']
+                    }
+                }
+            },
+            className='my-2'
         )
     ]
 )
