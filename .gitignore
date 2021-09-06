@@ -1,0 +1,9 @@
+
+# VS code
+.vscode 
+
+# Excel temporary files
+~$*
+
+# Mac files
+.DS_Store
